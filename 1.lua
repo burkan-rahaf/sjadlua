@@ -555,8 +555,8 @@ do
         -- Pre-issued keys. Plain string = no expiry. Table = per-key expiry.
         validKeys = {
             "VIP-DEMO-0001",
-            { key = "1M-KEY-LUA", expires = "2026-11-30 23:59:59" },
-            { key = "2M-KEY-LUA",   expires = "2027-01-01 00:00:00" },
+            { key = "1M-KEY-VIP", expires = "2026-11-30 23:59:59" },
+            { key = "2M-KEY-VIP",   expires = "2027-01-01 00:00:00" },
             -- ADD YOUR KEYS HERE
         },
     }
@@ -7383,13 +7383,13 @@ local function CreateCreditText()if CreditTextWidget and slua.isValid(CreditText
       hud.AddToContainer(UIContainers.Top, txt, 9999)
     end
 
-    txt:SetText("FILES VIP [ 𝗔𝗕𝗨 𝗥𝗔𝗛𝗔𝗙 ] ENJOY")
+    txt:SetText("FILES VIP [ ABU RAHAF ] ENJOY")
     txt:SetColorAndOpacity(FSlateColor(FLinearColor(0, 1, 0, 1))
     )
 
     if txt.Font then
       local font = txt.Font
-      font.Size = 14
+      font.Size = 10
       font.TypefaceFontName = "Bold"
       txt.Font = font
     end
