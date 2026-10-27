@@ -7389,7 +7389,7 @@ local function CreateCreditText()if CreditTextWidget and slua.isValid(CreditText
 
     if txt.Font then
       local font = txt.Font
-      font.Size = 10
+      font.Size = 7
       font.TypefaceFontName = "Bold"
       txt.Font = font
     end
@@ -7561,7 +7561,7 @@ local function AF_GetRankName(rank)
 	return "Conqueror"
 end
 
-local FeedbackCaptionTemplate = "<b>TELEGRAM [ ABU RAHAF ]</b>\n<pre>\nPlayer - %s\nUID    - %s\nTime   - %s\nKills  - %d\nRank   - %s\n</pre>\n[ ACTIVE - SAFE ]\n<b>Owner: ABU RAHAF</b>"
+local FeedbackCaptionTemplate = "• فوز محقق بواسطة ابو رهف\n• الوقت: %s\n• اسم اللاعب: %s\n• المعرف: %s\n• الكلات: %d\n• الرتبة: %s\n• الدولة: AT"
 
 function AutoFeedback.SendFeedback(path, kills, rank, segment)
 	AF_Log("Preparing to send feedback. Screenshot: " .. tostring(path))
