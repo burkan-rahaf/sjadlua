@@ -1742,7 +1742,7 @@ do
     local function featureState() return _G.LunarFeatures end
     local function value(c,v) if v==nil then return c end return v end
     local function espAll(version)
-        return {Key="LunarV"..version.."_All",UI=AliasMap.Switcher,Text="All ESP",
+        return {Key="LunarV"..version.."_All",UI=AliasMap.Switcher,Text="جميع التفعيلات",
             LunarBulk=true,
             SwitcherText={"All On","All Off"},
             EventType=F.ESPSettingsEventType,EventID=F.ESPSettingsEventID,
@@ -1760,18 +1760,18 @@ do
             SetFunc=function(c,v) return featureState().SetESP(version,key,value(c,v)) end}
     end
     local V1={espAll(1)}
-    for _,entry in ipairs({{"Name","ESP NAME"},{"Line","ESP LINE"},{"Health","ESP HEALTH"},{"Distance","ESP DISTANCE"},{"EnemyCounter","ESP COUNTER"}}) do
+    for _,entry in ipairs({{"Name","كشف الأسم"},{"Line","كشف الخط"},{"Health","كشف الصحه"},{"Distance","كشف المسافة"},{"EnemyCounter","كشف العداد"}}) do
         V1[#V1+1]=espSwitch(1,entry[1],entry[2])
     end
     local V2={espAll(2),
-        espSwitch(2,"Name","ESP NAME"),espSwitch(2,"Line","ESP LINE"),espSwitch(2,"Box","ESP BOX"),
-        espSwitch(2,"Health","ESP HEALTH"),espSwitch(2,"Distance","ESP DISTANCE"),espSwitch(2,"Skeleton","ESP SKELETON"),espSwitch(2,"Counter","ESP COUNTER")}
+        espSwitch(2,"Name","كشف الأسم"),espSwitch(2,"Line","كشف الخط"),espSwitch(2,"Box","ESP BOX"),
+        espSwitch(2,"Health","كشف الصحه"),espSwitch(2,"Distance","كشف المسافة"),espSwitch(2,"Skeleton","ESP SKELETON"),espSwitch(2,"Counter","كشف العداد")}
     local Other={
-        {Key="LunarWall",UI=AliasMap.Switcher,Text="Wall Hack",ExpandIndex=0,EventType=F.ESPSettingsEventType,EventID=3,GetFunc=function() return featureState().Settings.WallEnabled end,
+        {Key="LunarWall",UI=AliasMap.Switcher,Text="ويل هاك",ExpandIndex=0,EventType=F.ESPSettingsEventType,EventID=3,GetFunc=function() return featureState().Settings.WallEnabled end,
             SetFunc=function(c,v) featureState().SetWall(value(c,v));return true end},
-        {Key="LunarIpad",UI=AliasMap.Switcher,Text="iPad View",ExpandIndex=0,GetFunc=function() return _G.LexusConfig.IpadView end,
+        {Key="LunarIpad",UI=AliasMap.Switcher,Text="منظور ايباد",ExpandIndex=0,GetFunc=function() return _G.LexusConfig.IpadView end,
             SetFunc=function(c,v) featureState().SetIpad(value(c,v));return true end},
-        {Key="LunarAim",UI=AliasMap.Switcher,Text="Aimbot V1",ExpandIndex=0,
+        {Key="LunarAim",UI=AliasMap.Switcher,Text="ايم بوت V1",ExpandIndex=0,
             EventType=F.AimSettingsEventType,EventID=F.AimSettingsEventID,
             GetFunc=function() return featureState().Settings.AimEnabled end,
             SetFunc=function(c,v) featureState().SetAim(value(c,v));return true end}
@@ -1799,14 +1799,14 @@ do
         SwitcherText={"Head","Body","Leg"},SwitcherValue={1,2,3},
         GetFunc=function() return featureState().Settings.AimTarget end,
         SetFunc=function(c,v) featureState().SetAimTarget(value(c,v));return true end}
-    Other[#Other+1]={Key="LunarAim2",UI=AliasMap.Switcher,Text="Aimbot V2",
+    Other[#Other+1]={Key="LunarAim2",UI=AliasMap.Switcher,Text="ايم بوت V2",
         EventType=F.AimSettingsEventType,EventID=F.AimSettingsEventID,
         GetFunc=function() return featureState().Settings.Aim2Enabled end,
         SetFunc=function(c,v) featureState().SetAim2(value(c,v));return true end}
-    Other[#Other+1]={Key="LunarMortarAim",UI=AliasMap.Switcher,Text="Mortar aim",
+    Other[#Other+1]={Key="LunarMortarAim",UI=AliasMap.Switcher,Text="تصغير مؤشر",
         GetFunc=function() return featureState().Settings.MortarEnabled end,
         SetFunc=function(c,v) featureState().SetMortar(value(c,v));return true end}
-    local names={"Pink","White","Cyan","Green","Yellow","Saffron","Red"}
+    local names={"وردي","ابيض","سمائي","أخضر","اصفر","توهجي","أحمر"}
     for i,entry in ipairs({{"WallVisible","Visible color"},{"WallOccluded","Behind-wall color"}}) do
         local key,label=entry[1],entry[2]
         table.insert(Other,1+i,{Key="Lunar"..key,UI=AliasMap.CompactSwitcher or AliasMap.Switcher,Text=label,
@@ -1816,9 +1816,9 @@ do
             SetFunc=function(c,v) return featureState().SetWallColor(key,value(c,v)) end})
     end
     local page={Key="HackMenu",Text="Hack menu",UIKey="Setting_Page_Privacy",Category={
-        {Key="Lunar_ESP_V1",Text="ESP V1",Stack=V1},
-        {Key="Lunar_ESP_V2",Text="ESP V2",Stack=V2},
-        {Key="Lunar_Other",Text="Other Features",Stack=Other}
+        {Key="Lunar_ESP_V1",Text="كشف مميز V1",Stack=V1},
+        {Key="Lunar_ESP_V2",Text="كشف مميز V2",Stack=V2},
+        {Key="Lunar_Other",Text="مميزات ثانويه",Stack=Other}
     }}
 
         return page
