@@ -7383,7 +7383,7 @@ local function CreateCreditText()if CreditTextWidget and slua.isValid(CreditText
       hud.AddToContainer(UIContainers.Top, txt, 9999)
     end
 
-    txt:SetText("FILES VIP [ ABU RAHAF ] ENJOY")
+    txt:SetText("")
     txt:SetColorAndOpacity(FSlateColor(FLinearColor(0, 1, 0, 1))
     )
 
