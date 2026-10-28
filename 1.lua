@@ -7422,7 +7422,7 @@ pcall(function()
         local o = IPS.__inner_impl.UpdateArtQualityUI
         IPS.__inner_impl.UpdateArtQualityUI = function(self, _, _)
             if self.UIRoot and self.UIRoot.TextBlock_quality then
-                pcall(function() self.UIRoot.TextBlock_quality:SetText("THUNDERcfg") end)
+                pcall(function() self.UIRoot.TextBlock_quality:SetText("") end)
                 -- FIX: FSlateColor/FLinearColor are NOT globals here (they were locals
                 -- inside the first pcall). Old code crashed with nil-call on some builds.
                 pcall(function()
