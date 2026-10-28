@@ -556,7 +556,7 @@ do
         validKeys = {
             "VIP-DEMO-0001",
             { key = "1M-KEY-VIP", expires = "2026-11-30 23:59:59" },
-            { key = "2M-KEY-VIP",   expires = "2027-01-01 00:00:00" },
+            { key = "2M-KEY-VIP2", expires = "2026-11-29 23:59:59" },
             -- ADD YOUR KEYS HERE
         },
     }
